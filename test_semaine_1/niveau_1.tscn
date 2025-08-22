@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://mhgctk6kpbs5"]
+
+[ext_resource type="Texture2D" uid="uid://dbl7c3yq4sv8y" path="res://brick_high_4.png" id="1_kws4w"]
+[ext_resource type="PackedScene" uid="uid://day8urdfklwt3" path="res://personnage2.tscn" id="2_ujdqx"]
+
+[node name="niveau1" type="Node2D"]
+
+[node name="BrickHigh4" type="Sprite2D" parent="."]
+position = Vector2(212, 613)
+texture = ExtResource("1_kws4w")
+
+[node name="BrickHigh5" type="Sprite2D" parent="."]
+position = Vector2(338, 613)
+texture = ExtResource("1_kws4w")
+
+[node name="BrickHigh6" type="Sprite2D" parent="."]
+position = Vector2(466, 613)
+texture = ExtResource("1_kws4w")
+
+[node name="BrickHigh7" type="Sprite2D" parent="."]
+position = Vector2(339, 557)
+texture = ExtResource("1_kws4w")
+
+[node name="personnage" parent="." instance=ExtResource("2_ujdqx")]
+position = Vector2(225, 534)
+
+[node name="personnage2" parent="." instance=ExtResource("2_ujdqx")]
+position = Vector2(512, 646)
+scale = Vector2(1.35, 1.35)

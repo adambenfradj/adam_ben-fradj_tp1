@@ -1,0 +1,134 @@
+[gd_scene load_steps=20 format=3 uid="uid://1w6nmixt6j0m"]
+
+[ext_resource type="Texture2D" uid="uid://dty2gi5722jea" path="res://brick_high_slope_left_4.png" id="1_8att0"]
+[ext_resource type="Texture2D" uid="uid://dmi8ojjianr4b" path="res://brick_high_slope_right_4.png" id="2_eo82h"]
+[ext_resource type="Texture2D" uid="uid://dn1oek5mh2gv1" path="res://brick_high_2.png" id="3_23te6"]
+[ext_resource type="Texture2D" uid="uid://qa6ml66r2o01" path="res://brick_high_slope_left_2.png" id="4_kkmw2"]
+[ext_resource type="Texture2D" uid="uid://d04he6ao03h03" path="res://brick_high_slope_right_2.png" id="5_8imsl"]
+[ext_resource type="Texture2D" uid="uid://dtmrygn38wsmg" path="res://icon.svg" id="6_ux2wm"]
+[ext_resource type="Texture2D" uid="uid://he611wg38y4s" path="res://personnage/character_green_idle.png" id="7_pvsty"]
+[ext_resource type="Texture2D" uid="uid://d3l0wrmx66mqr" path="res://personnage/character_green_walk_a.png" id="8_u33a7"]
+[ext_resource type="Texture2D" uid="uid://ddsuoewpul7cw" path="res://personnage/character_green_walk_b.png" id="9_a0geg"]
+[ext_resource type="Texture2D" uid="uid://lclwta4ed2bp" path="res://personnage/character_green_climb_a.png" id="10_tu4la"]
+[ext_resource type="Texture2D" uid="uid://dsqtg7e3x518e" path="res://personnage/character_green_climb_b.png" id="11_ih3nv"]
+[ext_resource type="Texture2D" uid="uid://cyxtkxqcd8bg0" path="res://personnage/character_green_duck.png" id="12_nl4sg"]
+[ext_resource type="Texture2D" uid="uid://53dn7xeggw3a" path="res://personnage/character_green_front.png" id="13_vf1j0"]
+[ext_resource type="Texture2D" uid="uid://do7bpt2a1k3w8" path="res://personnage/character_green_hit.png" id="14_krcsf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gis8l"]
+load_path = "res://.godot/imported/brick_low_4.png-bf807c634bcca087379e46035c7b33ed.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44n2p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_u33a7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a0geg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx7kk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_tu4la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ih3nv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n778p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_nl4sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vf1j0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uoa6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_krcsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pvsty")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MaScene" type="Node2D"]
+
+[node name="BrickHighSlopeLeft4" type="Sprite2D" parent="."]
+position = Vector2(199, 280)
+texture = ExtResource("1_8att0")
+
+[node name="BrickHighSlopeRight4" type="Sprite2D" parent="."]
+position = Vector2(335, 280)
+texture = ExtResource("2_eo82h")
+
+[node name="BrickHigh3" type="Sprite2D" parent="."]
+position = Vector2(269, 225)
+texture = ExtResource("3_23te6")
+
+[node name="BrickHigh2" type="Sprite2D" parent="."]
+position = Vector2(270, 171)
+texture = ExtResource("3_23te6")
+
+[node name="BrickHighSlopeLeft2" type="Sprite2D" parent="."]
+position = Vector2(206, 186)
+texture = ExtResource("4_kkmw2")
+
+[node name="BrickHighSlopeRight2" type="Sprite2D" parent="."]
+position = Vector2(332, 189)
+texture = ExtResource("5_8imsl")
+
+[node name="BrickLow4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(65, 21)
+texture = SubResource("CompressedTexture2D_gis8l")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(270, 83)
+texture = ExtResource("6_ux2wm")
+
+[node name="CharacterGreenIdle" type="Sprite2D" parent="."]
+position = Vector2(479, 252)
+texture = ExtResource("7_pvsty")
+
+[node name="personnage" type="AnimatedSprite2D" parent="CharacterGreenIdle"]
+position = Vector2(127, 4)
+sprite_frames = SubResource("SpriteFrames_44n2p")
+frame_progress = 0.444187
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterGreenIdle"]
+position = Vector2(247, 4)
+sprite_frames = SubResource("SpriteFrames_nx7kk")
+frame_progress = 0.930693
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterGreenIdle"]
+position = Vector2(-416, 1)
+sprite_frames = SubResource("SpriteFrames_n778p")
+frame_progress = 0.781778
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CharacterGreenIdle"]
+position = Vector2(363, 1)
+sprite_frames = SubResource("SpriteFrames_uoa6c")
+frame_progress = 0.640702

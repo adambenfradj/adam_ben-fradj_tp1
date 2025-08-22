@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://day8urdfklwt3"]
+
+[ext_resource type="Script" uid="uid://dkc3nqgfo5trs" path="res://personnage_2.gd" id="1_ov316"]
+[ext_resource type="Texture2D" uid="uid://53dn7xeggw3a" path="res://personnage/character_green_front.png" id="1_t8a1u"]
+[ext_resource type="Texture2D" uid="uid://do7bpt2a1k3w8" path="res://personnage/character_green_hit.png" id="2_ov316"]
+[ext_resource type="Texture2D" uid="uid://he611wg38y4s" path="res://personnage/character_green_idle.png" id="3_jv8co"]
+[ext_resource type="Texture2D" uid="uid://c075qftk3dplo" path="res://personnage/character_green_jump.png" id="4_inbw3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebxv7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t8a1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ov316")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j16oh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jv8co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_inbw3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="personnage" type="Node2D"]
+script = ExtResource("1_ov316")
+
+[node name="move" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0.345098, 0.662745, 1)
+position = Vector2(66, -65)
+sprite_frames = SubResource("SpriteFrames_ebxv7")
+frame_progress = 0.691353
+
+[node name="handRaise" type="AnimatedSprite2D" parent="."]
+position = Vector2(166, -64)
+sprite_frames = SubResource("SpriteFrames_j16oh")
+frame_progress = 0.551565
