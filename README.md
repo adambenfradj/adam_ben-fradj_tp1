@@ -2,7 +2,7 @@
 
 ## Run Rabbit Run
 
-🧠 Description du concept
+### 🧠 Description du concept
 
 Le joueur progresse dans un univers en 2D, de type arena platformer, avec une vue latérale. À chaque instant, des pièges surgissent, et l’environnement change subtilement pour piéger le joueur.
 
@@ -22,7 +22,7 @@ Carotte spectrale : objet bonus piégé, difficile à atteindre, déclenche un m
 
 L'expérience est basée sur la rapidité, l’instinct et la gestion de la panique face aux dangers constants dans une atmosphère oppressante.
 
-🎮 Choix d'interactions avec le clavier
+### 🎮 Choix d'interactions avec le clavier
 
 Les contrôles sont volontairement réduits pour privilégier les réflexes et l’intensité de l’action :
 
@@ -36,7 +36,7 @@ Touche “E” → interaction avec certains éléments spéciaux (ex : portail 
 
 L’interface est minimale pour ne pas distraire le joueur de l’ambiance et du danger immédiat.
 
-🎨 Choix de médias visuels
+### 🎨 Choix de médias visuels
 
 Palette de couleurs : teintes sombres (bleu nuit, noir, violet), ponctuées de lumières toxiques (néon vert, cyan, bleu électrique) pour créer un contraste entre nature morte et vie surnaturelle.
 
@@ -48,7 +48,7 @@ Environnement : forêt dense, arbres aux formes distordues, champignons fluoresc
 
 Animations : lumière qui scintille, plateformes qui tremblent, effets de glitch ou de brume flottante.
 
-🔊 Choix de médias sonores
+### 🔊 Choix de médias sonores
 
 Ambiance : Musique Run Rabbit Run
 
