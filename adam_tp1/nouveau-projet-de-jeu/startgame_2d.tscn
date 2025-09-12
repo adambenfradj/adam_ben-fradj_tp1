@@ -1,0 +1,247 @@
+[gd_scene load_steps=28 format=3 uid="uid://crbouiv0146uw"]
+
+[ext_resource type="Texture2D" uid="uid://cya3edxieiwhv" path="res://map.png" id="1_dhthp"]
+[ext_resource type="Texture2D" uid="uid://dirqu37ja0hdy" path="res://carrot.png" id="2_7yphm"]
+[ext_resource type="Texture2D" uid="uid://2adnc057q34n" path="res://heart.png" id="3_2887v"]
+[ext_resource type="Script" uid="uid://dfr5s4mvm75ne" path="res://character_body_2d.gd" id="4_mrcdr"]
+[ext_resource type="Texture2D" uid="uid://bj813pg1neni2" path="res://essai.png" id="5_wd35w"]
+[ext_resource type="Texture2D" uid="uid://brn3ad6m3nkts" path="res://2.png" id="6_glufv"]
+[ext_resource type="Texture2D" uid="uid://xpvk17ps82co" path="res://3.png" id="7_o17h2"]
+[ext_resource type="Texture2D" uid="uid://cp5lxx8sxiiwc" path="res://4.png" id="8_tnupt"]
+[ext_resource type="Texture2D" uid="uid://cl01i0l64e00b" path="res://5.png" id="9_h1bcg"]
+[ext_resource type="Texture2D" uid="uid://bv50qaxlq0mek" path="res://1.png" id="10_fg7tr"]
+[ext_resource type="Texture2D" uid="uid://c7uakinff5ik0" path="res://obstacle1.png" id="11_7yphm"]
+[ext_resource type="AudioStream" uid="uid://dtckhwphmxfth" path="res://laserRetro_002.ogg" id="12_2887v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy16u"]
+size = Vector2(322, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eabc"]
+size = Vector2(550, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na4tf"]
+size = Vector2(216, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhthp"]
+size = Vector2(141, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yphm"]
+size = Vector2(119, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib13j"]
+size = Vector2(64, 52)
+
+[sub_resource type="Animation" id="Animation_rj586"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Essai:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_d21ai"]
+resource_name = "marche"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Essai:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 7, 6]
+}
+
+[sub_resource type="Animation" id="Animation_ir8iy"]
+resource_name = "marcher_2"
+length = 0.2985
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Essai:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 4, 8]
+}
+
+[sub_resource type="Animation" id="Animation_4d7sh"]
+resource_name = "sauter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Essai:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4d7sh"]
+_data = {
+&"RESET": SubResource("Animation_rj586"),
+&"marche": SubResource("Animation_d21ai"),
+&"marcher_2": SubResource("Animation_ir8iy"),
+&"sauter": SubResource("Animation_4d7sh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2887v"]
+size = Vector2(78, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrcdr"]
+size = Vector2(89, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7yphm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2887v"]
+radius = 42.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(576, 323)
+scale = Vector2(0.422426, 0.52443)
+texture = ExtResource("1_dhthp")
+
+[node name="Carrot" type="Sprite2D" parent="."]
+position = Vector2(1082.63, 87.625)
+scale = Vector2(0.0328126, 0.0328126)
+texture = ExtResource("2_7yphm")
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(977.625, 99.625)
+scale = Vector2(0.152539, 0.152539)
+texture = ExtResource("3_2887v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(339, 632.5)
+shape = SubResource("RectangleShape2D_vy16u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(874, 633.5)
+shape = SubResource("RectangleShape2D_4eabc")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 519.0
+offset_top = 504.0
+offset_right = 606.0
+offset_bottom = 554.0
+metadata/_edit_use_anchors_ = true
+
+[node name="static" type="StaticBody2D" parent="."]
+
+[node name="1" type="Sprite2D" parent="static"]
+position = Vector2(592, 309)
+scale = Vector2(1.19198, 1.07944)
+texture = ExtResource("10_fg7tr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="static"]
+position = Vector2(586, 325)
+shape = SubResource("RectangleShape2D_na4tf")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="2" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(796, 474)
+texture = ExtResource("6_glufv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(803.5, 465)
+shape = SubResource("RectangleShape2D_dhthp")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="3" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(347, 490)
+texture = ExtResource("7_o17h2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(347.5, 483)
+shape = SubResource("RectangleShape2D_7yphm")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 3
+script = ExtResource("4_mrcdr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(628, 581)
+shape = SubResource("RectangleShape2D_ib13j")
+
+[node name="Essai" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(631, 586)
+scale = Vector2(0.607692, 0.607692)
+texture = ExtResource("5_wd35w")
+hframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_4d7sh")
+}
+speed_scale = 1.143
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="4" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(272, 280)
+texture = ExtResource("8_tnupt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(270, 269)
+shape = SubResource("RectangleShape2D_2887v")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="5" type="Sprite2D" parent="StaticBody2D5"]
+position = Vector2(934.5, 323.75)
+scale = Vector2(0.959302, 1.04667)
+texture = ExtResource("9_h1bcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(913.5, 315)
+shape = SubResource("RectangleShape2D_mrcdr")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(8, -167)
+collision_layer = 0
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_7yphm")
+gravity_scale = 0.238
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="Obstacle1" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(801.375, 70.9057)
+scale = Vector2(0.187352, 0.187352)
+texture = ExtResource("11_7yphm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(803, 73)
+shape = SubResource("CircleShape2D_2887v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_2887v")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_2887v")
+
+[connection signal="body_entered" from="RigidBody2D" to="CharacterBody2D" method="_on_rigid_body_2d_body_entered"]
