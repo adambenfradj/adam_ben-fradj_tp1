@@ -1,10 +1,11 @@
 extends CharacterBody2D
  
-var speed = 300
+var speed = 200
  
 # Vitesse de saut
  
 var jump_velocity = -450
+var has_died:=false
  
 # Lie les nœuds du jeu au script
  
@@ -13,11 +14,12 @@ var jump_velocity = -450
 @onready var animation_player = $AnimationPlayer
  
 @export var push_force = 1000.0
- 
+var physics_active = true
 # Gère la gravité
  
 func _physics_process(delta):
- 
+	if not physics_active : 
+		return
 	# Si le joueur n'est pas au sol, applique la gravité
  
 	if  !is_on_floor():
@@ -88,9 +90,7 @@ func _physics_process(delta):
 			  # Ajuste ce facteur pour un meilleur effet
  
  
-func _on_rigid_body_2d_body_entered(body: CharacterBody2D) -> void:
-	$AnimationPlayer.play("die")
-	pass # Replace with function body.
+
 
  
 
@@ -99,3 +99,8 @@ func _on_button_pressed() -> void:
 	pass # Replace with function body.
 	get_tree().change_scene_to_file("res://startgame_2d.tscn")
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	$AnimationPlayer.play("die") # Replace with function body.
+	physics_active = false
