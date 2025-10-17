@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1c0f6i3unb31"]
+
+[ext_resource type="Script" uid="uid://btjr75r52nrwq" path="res://pause_menu.gd" id="1_hdmo1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
+bg_color = Color(0, 0.282353, 0.521569, 1)
+shadow_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
+bg_color = Color(0, 0.282353, 0.521569, 1)
+shadow_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05uyy"]
+bg_color = Color(0, 0.282353, 0.521569, 1)
+shadow_size = 25
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_hdmo1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_right = 1156.0
+offset_bottom = 646.0
+color = Color(1, 1, 1, 0.152941)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 322.0
+offset_top = 167.0
+offset_right = 822.0
+offset_bottom = 475.0
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0, 0.282353, 0.521569, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdmo1")
+text = "Continue"
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_nwcfo")
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_05uyy")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
